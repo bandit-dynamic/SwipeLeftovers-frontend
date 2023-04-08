@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Main />
       <h1>Damn he's ugly...</h1>
+      <h2>Wording check.</h2>
     </div>
   );
 }
