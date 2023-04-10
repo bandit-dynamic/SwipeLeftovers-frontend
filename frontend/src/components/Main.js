@@ -7,7 +7,7 @@ import Show from "../pages/Show"
 const Main = (props) => {
     const [ profile, setProfile ] = useState(null)
 
-    const URI = `${process.env.BACK_END_SERVER_URL}`
+    const URI = `${process.env.REACT_APP_API_URI}`
     
  
 
