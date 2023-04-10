@@ -7,19 +7,17 @@ import Show from "../pages/Show"
 const Main = (props) => {
     const [ profile, setProfile ] = useState(null)
 
-    const URI = `${process.env.BACK_END_SERVER_URL}`
+    const URI = `${process.env.REACT_APP_API_URI}`
     
- 
-
     const getProfile = async () => {
-        const response = await fetch(`${URI}`)
+        const response = await fetch(URI)
         const data = await response.json()
         setProfile(data.data)
-        console.log(data)
+        console.log(data.data)
     }
 
     const createProfile = async (person) =>{
-        await fetch(`${URI}`, {
+        await fetch(`${URI}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

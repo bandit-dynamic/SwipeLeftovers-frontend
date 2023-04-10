@@ -8,6 +8,7 @@ const Index = (props) => {
         age: "",
         bio: "",
         email: "",
+        password: "",
         
     })
 
@@ -24,19 +25,21 @@ const handleSubmit = (event) =>{
         age: "",
         bio: "",
         email: "",
+        password: "",
     })
 }
 
 const loaded = () =>{
     return props.profile.map((person) =>{
+        return(
         <div key={person._id} className="person"> 
         <img src={person.image} alt={person.name}/>
         <Link to={`/profile/${person._id}`}><h1>{person.name}</h1></Link>
         <h3>{person.age}</h3>   
         <p>{person.bio}</p>
-        <h3>{person.email}</h3>
-            
+        <h3>{person.email}</h3>     
         </div>
+    )
     })
 }
 
@@ -80,6 +83,13 @@ const loading = () =>{
                   value={newForm.bio}
                   name="bio"
                   placeholder="bio"
+                  onChange={handleChange}
+                  />
+                 <input
+                  type="text"
+                  value={newForm.password}
+                  name="password"
+                  placeholder="password"
                   onChange={handleChange}
                   />
                 <input type="submit" value="Create" />
