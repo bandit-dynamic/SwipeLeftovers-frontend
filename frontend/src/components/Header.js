@@ -6,6 +6,7 @@ const Header = (props) => {
           <Link to="/">
               <div>Swipe Leftovers App</div>
           </Link>
+    
       </nav>
   );
 }
