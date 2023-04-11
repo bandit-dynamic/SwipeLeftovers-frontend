@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
-import Index from "../pages/Index"
+import Index from "../pages/Form"
 import Show from "../pages/Show"
+import ProfileList from "../pages/ProfileList"
 
 
 const Main = (props) => {
@@ -9,21 +10,20 @@ const Main = (props) => {
 
     const URI = `${process.env.REACT_APP_API_URI}`
     
- 
-
     const getProfile = async () => {
-        const response = await fetch(`${URI}`)
+        const response = await fetch(URI)
         const data = await response.json()
         setProfile(data.data)
-        console.log(data)
+        console.log(data.data)
     }
 
     const createProfile = async (person) =>{
-        await fetch(`${URI}`, {
+        await fetch(`${URI}/register`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
+
             body: JSON.stringify(person)
         })
         getProfile()
@@ -58,7 +58,10 @@ const Main = (props) => {
                 <Route path="/profile/:id" element={<Show 
                          profile={profile}
                          updateProfile={updateProfile}
-                         deleteProfile={deleteProfile}/>}/>               
+                         deleteProfile={deleteProfile}/>}/>    
+                <Route path="/profile/register" element={<ProfileList profile={profile}
+                         updateProfile={updateProfile}
+                         deleteProfile={deleteProfile}/>}/>         
             </Routes>
         </main>
     )
