@@ -1,7 +1,8 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState} from "react"
+import { Link, useNavigate} from "react-router-dom"
 
 const Index = (props) => {
+    const navigate = useNavigate()
     const [ newForm, setNewform ] = useState({
         name: "",
         image: "",
@@ -19,6 +20,7 @@ const handleChange = (event) =>{
 const handleSubmit = (event) =>{
     event.preventDefault()
     props.createProfile(newForm)
+    navigate('/profile/register')
     setNewform({
         name: "",
         image: "",
@@ -29,26 +31,27 @@ const handleSubmit = (event) =>{
     })
 }
 
-const loaded = () =>{
-    return props.profile.map((person) =>{
-        return(
-        <div key={person._id} className="person"> 
-        <img src={person.image} alt={person.name}/>
-        <Link to={`/profile/${person._id}`}><h1>{person.name}</h1></Link>
-        <h3>{person.age}</h3>   
-        <p>{person.bio}</p>
-        <h3>{person.email}</h3>     
-        </div>
-    )
-    })
-}
+// const loaded = () =>{
+//     return props.profile.map((person) =>{
+//         return(
+//         <div key={person._id} className="person"> 
+//         <img src={person.image} alt={person.name}/>
+//         <Link to={`/profile/${person._id}`}><h1>{person.name}</h1></Link>
+//         <h3>{person.age}</h3>   
+//         <p>{person.bio}</p>
+//         <h3>{person.email}</h3>     
+//         </div>
+//     )
+//     })
+// }
 
-const loading = () =>{
-    return <h1>Loading...</h1>
-}
+// const loading = () =>{
+//     return <h1>Loading...</h1>
+// }
 
     return (
         <section>
+          <h2>Register to become a member</h2>
             <form onSubmit={handleSubmit}>
                 <input 
                   type="text"
@@ -92,9 +95,9 @@ const loading = () =>{
                   placeholder="password"
                   onChange={handleChange}
                   />
-                <input type="submit" value="Create" />
+                <input className="signUp" type="submit" value="SignUp" />
             </form>
-            {props.profile ? loaded() : loading()}
+            {/* {props.profile ? loaded() : loading()} */}
         </section>
     )
 }

@@ -1,8 +1,9 @@
 import { useState } from "react"
 import {useParams, useNavigate} from "react-router-dom"
 
+
 const Show = (props) => {
-  
+    const [toggle, setToggle] = useState(false)
     const params = useParams()
     const navigate = useNavigate()
     const id = params.id
@@ -18,24 +19,31 @@ const Show = (props) => {
     const handleSubmit = (event) =>{
         event.preventDefault()
         props.updateProfile(editForm, person._id)
-        navigate('/')
+        navigate('/profile/register')
     }
 
     const removePerson = (event) =>{
         event.preventDefault()
         props.deleteProfile(person._id)
-        navigate('/')
+        navigate('/profile/register')
+    }
+
+    const handleToggle = () =>{
+      setToggle(!toggle)
     }
 
     return (
         <div className="person">
+          <div className="detail">
            <img src={person.image} alt={person.name}/>
            <h2>{person.name}</h2>
-           <h3>{person.age}</h3>   
-           <p>{person.bio}</p>
-           <h3>{person.email}</h3>
-           <button id="delete" onClick={removePerson}>DELETE</button>
-           <form onSubmit={handleSubmit}>
+           <h3>Age: {person.age}</h3>   
+           <p><b>Bio:</b> {person.bio}</p>
+           {toggle?(<h3>{person.email}</h3>) : (<button className="contactBtn" onClick={handleToggle}>contact</button>)}
+           </div>
+           {/* <button id="delete" onClick={removePerson}>DELETE</button> */}
+            <div className="showForm">
+           <form className="showForm" onSubmit={handleSubmit}> 
                 <input 
                   type="text"
                   value={editForm.name}
@@ -71,8 +79,13 @@ const Show = (props) => {
                   placeholder="bio"
                   onChange={handleChange}
                   />
-                <input type="submit" value="Create" />
+                  <div className="btn">
+                <input className="submitBtn" type="submit" value="SUBMIT" />
+                <button className="delBtn" onClick={removePerson}>DELETE</button>
+                </div>
+                
             </form>
+            </div>
         </div>
     )
 }
