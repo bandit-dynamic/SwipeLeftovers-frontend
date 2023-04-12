@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+
 const Header = (props) => {
   return (
       <nav className='nav'>
@@ -11,6 +12,9 @@ const Header = (props) => {
           </Link>
           <Link className="link" to="/profile">
               <div>LogOut</div>
+          </Link>
+          <Link className="link" to="/profile/login">
+              <div>LogIn</div>
           </Link>
     
       </nav>
