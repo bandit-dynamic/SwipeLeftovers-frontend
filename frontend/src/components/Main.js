@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom"
 import Index from "../pages/Form"
 import Show from "../pages/Show"
 import ProfileList from "../pages/ProfileList"
+import Login from "../pages/UserAuth"
 
 
 const Main = (props) => {
@@ -61,7 +62,8 @@ const Main = (props) => {
                          deleteProfile={deleteProfile}/>}/>    
                 <Route path="/profile/register" element={<ProfileList profile={profile}
                          updateProfile={updateProfile}
-                         deleteProfile={deleteProfile}/>}/>         
+                         deleteProfile={deleteProfile}/>}/>
+                <Route path="/profile/login" element={<Login />}/>        
             </Routes>
         </main>
     )
