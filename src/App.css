@@ -1,0 +1,130 @@
+*{
+  text-align: center;
+}
+
+.nav{
+  background-color: black; 
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 5px 20px 5px;  
+  /* margin-left: 0 1120px; */
+  
+}
+
+.link{
+  text-decoration: none;
+  font-size: 25px;
+  color: aliceblue;
+  margin-top: 10px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.link:hover{
+  color: rgb(199, 212, 212);
+  font-size: 35px;
+}
+
+input{
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  height: 25px;
+  width: 330px;
+}
+
+section{
+  display: inline-block;
+  margin: 100px auto;
+  background-color: rgb(248, 246, 244);
+  padding: 80PX;
+  border-radius: 1rem;
+  box-shadow: 1px 2px 8px 6px #bfbdbd
+}
+
+container{
+ /* background-color: aquamarine;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px; 
+  column-gap: 10px;
+  padding: 10px;   */
+  margin-top: 42px ;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 500px;
+ 
+}
+
+.people{
+  position: relative;
+  text-align: center;
+  color: white;
+  
+}
+
+img{
+  height: 350px;
+  border-radius: 2rem;
+  width: 350px;
+  box-shadow: 1px 2px 8px 2px #bfbdbd
+}
+
+.linkH1{ 
+  color: rgb(247, 245, 245);
+  text-decoration: none;
+  position: relative;
+  bottom: 90px;
+  right: 70px;
+}
+
+.linkH1:hover{
+  color: rgb(0, 0, 0);
+  font-size: 17px;
+}
+
+.showForm{
+  display: inline-block;
+  margin: 5px auto;
+}
+
+.submitBtn{
+  position: relative;
+  bottom: 20px;
+  right: 50px;
+  margin: 50px auto;
+  text-align: center;
+  width: 63px;
+  height: 23px;
+}
+
+.delBtn{
+  position: relative;
+  bottom: 92px;
+  left: 50px;
+}
+
+.signUp{
+  width: 65px;
+  margin-left: 140px;
+  margin-top: 20px;
+}
+
+/* .detail{
+  background-color: antiquewhite;
+} */
+
+.person{
+  background-color: rgb(254, 255, 255);
+  width: 500px;
+  /* text-align: center; */
+  margin: 40px auto;
+  padding-top: 40px;
+  box-shadow: 1px 2px 8px 1px #bfbdbd;
+  border-radius: 1rem;
+  
+}
