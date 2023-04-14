@@ -1,7 +1,8 @@
 import { useState } from "react";
 import axios  from "axios";
+import { useNavigate } from "react-router";
 
-import { redirect} from 'react-router-dom'
+// import { redirect} from 'react-router-dom'
 // import { useEffect } from 'react';
 
 // const Login = (props) => {
@@ -52,6 +53,7 @@ const Login = () => {
 const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const navigate = useNavigate()
   const URI = `${process.env.REACT_APP_API_URI}`
 
   const handleSubmit = (e) => {
@@ -68,7 +70,9 @@ const [email, setEmail] = useState("");
     
     axios(configuration)
       .then((result) => {
-        setLogin(true);
+        setLogin(true)
+        navigate('/profile/register')
+        
       })
       .catch((error) => {
         error = new Error();
