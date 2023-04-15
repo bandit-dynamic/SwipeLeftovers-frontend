@@ -9,7 +9,7 @@ const ProfileList = (props)=>{
        { props.profile.map((person) =>{ 
         return( 
         <div key={person._id} className="people">
-          <img src={person.image} alt={person.name}/>
+          <img src={person.image[0]} alt={person.name}/>
           <div key={person._id}> 
           <Link className="linkH1" to={`/profile/${person._id}`}><h1>{person.name},<span>&nbsp;&nbsp;</span>{person.age}</h1></Link>
         {/* <h3>Age: </h3>    */}
