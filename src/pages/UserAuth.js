@@ -1,16 +1,19 @@
-// import { useNavigate } from 'react-router-dom'
+import { useState } from "react";
+import axios  from "axios";
+import { Cookies } from "react-cookie";
+import { useNavigate } from "react-router";
+
+
 // import { useEffect } from 'react';
 
-// const Login = () => {
+// const Login = (props) => {
 //   const URI = `${process.env.REACT_APP_API_URI}`
-
-//   const navigate = useNavigate()
 
 //   const handleLogin = (e) => {
 //     e.preventDefault()
 
 //     const form = e.target;
-//     const user = {
+//     const profile = {
 //       email: form[0].value,
 //       password: form[1].value
 //     }
@@ -20,7 +23,7 @@
 //       headers: {
 //         "Content-type": "application/json"
 //       },
-//       body: JSON.stringify(user)
+//       body: JSON.stringify(profile)
 //     })
 //     .then(res => res.json())
 //     .then(data => {
@@ -30,11 +33,11 @@
 //   useEffect(() => {
 //     fetch('/userIsAuth', {
 //       headers: {
-//         "token-required": localStorage.getItem("token")
+//         "token-required": `${localStorage.getItem("token")}`
 //       }
 //     })
 //     .then(res => res.json())
-//     .then(data => data.isLoggedIn ? navigate.push('profile/register'): null)
+//     .then(data => data.isLoggedIn ? redirect('profile/register/'): null)
 //   }, [])
 
 //   return (
@@ -48,70 +51,61 @@
 
 // export default Login;
 
-import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const Login = () => {
-  const URI = process.env.REACT_APP_API_URI;
+const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, setLogin] = useState(false);
+  const URI = `${process.env.REACT_APP_API_URI}`
+  const cookies = new Cookies()
+  const navigate = useNavigate()
 
-  const navigate = useNavigate();
-
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    const form = e.target;
-    const user = {
-      email: form[0].value,
-      password: form[1].value
-    };
-
-    fetch(`${URI}login`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
+    const configuration = {
+      method: "POST",
+      url: `${URI}login`,
+      data: {
+        email,
+        password,
       },
-      body: JSON.stringify(user)
-    })
-    .then(res => res.json())
-    .then(data => {
-      localStorage.setItem('token', data.token);
-      navigate('/profile/register');
-    });
-  };
-
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (typeof token === 'string' && token.trim().length > 0) {
-      fetch('/userIsAuth', {
-        headers: {
-          'Authorization': `Bearer ${token.trim()}`
-        }
+    };
+    
+    axios(configuration)
+      .then((result) => {
+        setLogin(true);
+        cookies.set("TOKEN", result.data.token, {
+          path:"/",
+        })
+        console.log(result.data.token)
       })
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Failed to authenticate');
-        }
-        return res.json();
-      })
-      .then(data => {
-        if (data.isLoggedIn) {
-          navigate('/profile/register');
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        // Display error message to the user
+      .catch((error) => {
+        error = new Error();
       });
-    }
-  }, [navigate]);
+  
+}
+return(
+  <form onSubmit={(e)=>handleSubmit(e)}>
+  {/* email */}
+  <input required value={email} type="email" onChange={(e) => setEmail(e.target.value)}/>
 
-  return (
-    <form onSubmit={event => handleLogin(event)}>
-      <input required type="email" />
-      <input required type="password" />
-      <input type="submit" value="submit" />
-    </form>
-  );
-};
+  {/* password */}
+  <input required value={password} type="password" onChange={(e) => setPassword(e.target.value)}/>
+
+  {/* submit button */}
+  <input type="submit" value="submit" onClick={(e) => handleSubmit(e)}/>
+
+  {login ? (
+          navigate('/profile/register')
+        ) : (
+          <p>You Are Not Logged in</p>
+        )}
+</form>
+  )
+
+}
 
 export default Login;
+
+

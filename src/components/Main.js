@@ -4,9 +4,13 @@ import Index from "../pages/Form"
 import Show from "../pages/Show"
 import ProfileList from "../pages/ProfileList"
 import Login from "../pages/UserAuth"
+import { Cookies } from "react-cookie"
+const cookies = new Cookies()
 
 
 const Main = (props) => {
+    const token = cookies.get("TOKEN")
+    console.log(token)
     const [ profile, setProfile ] = useState(null)
 
     const URI = `${process.env.REACT_APP_API_URI}`
