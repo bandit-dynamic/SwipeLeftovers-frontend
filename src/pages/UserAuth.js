@@ -80,17 +80,29 @@ const Login = () => {
   };
 
   useEffect(() => {
-    fetch('/userIsAuth', {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.isLoggedIn) {
-        navigate('/profile/register');
-      }
-    });
+    const token = localStorage.getItem('token');
+    if (typeof token === 'string' && token.trim().length > 0) {
+      fetch('/userIsAuth', {
+        headers: {
+          'Authorization': `Bearer ${token.trim()}`
+        }
+      })
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Failed to authenticate');
+        }
+        return res.json();
+      })
+      .then(data => {
+        if (data.isLoggedIn) {
+          navigate('/profile/register');
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        // Display error message to the user
+      });
+    }
   }, [navigate]);
 
   return (
