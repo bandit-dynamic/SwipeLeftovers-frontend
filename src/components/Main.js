@@ -56,21 +56,21 @@ const Main = (props) => {
         getProfile()
       }, []);
 
-    return (
-        <main>
-            <Routes>
-                <Route path="/" element={<Index profile={profile} createProfile={createProfile}/>}/>
-                <Route path="/profile/:id" element={<Show 
-                         profile={profile}
-                         updateProfile={updateProfile}
-                         deleteProfile={deleteProfile}/>}/>    
-                <Route path="/profile/register" element={<ProfileList profile={profile}
-                         updateProfile={updateProfile}
-                         deleteProfile={deleteProfile}/>}/>
-                <Route path="/profile/login" element={<Login />}/>        
-            </Routes>
-        </main>
-    )
+        return (
+            <main>
+                <Routes>
+                    <Route path="/" element={<Index profile={profile} createProfile={createProfile}/>}/>
+                    <Route path="/profile/:id" element={<Show 
+                            profile={profile}
+                            updateProfile={updateProfile}
+                            deleteProfile={deleteProfile}/>}/>    
+                    <Route path="/profile/register" element={<ProfileList profile={profile}
+                            updateProfile={updateProfile}
+                            deleteProfile={deleteProfile}/>}/>
+                    <Route path="/profile/login" element={<Login />}/>        
+                </Routes>
+            </main>
+        )
 }
 
 export default Main
