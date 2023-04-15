@@ -1,8 +1,10 @@
 import { useState } from "react";
 import axios  from "axios";
+import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router";
 
-// import { redirect} from 'react-router-dom'
+
+
 // import { useEffect } from 'react';
 
 // const Login = (props) => {
@@ -49,12 +51,16 @@ import { useNavigate } from "react-router";
 // }
 
 // export default Login;
+
+
 const Login = () => {
 const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
   const navigate = useNavigate()
   const URI = `${process.env.REACT_APP_API_URI}`
+  const cookies = new Cookies()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -70,9 +76,17 @@ const [email, setEmail] = useState("");
     
     axios(configuration)
       .then((result) => {
+
         setLogin(true)
         navigate('/profile/register')
         
+
+        setLogin(true);
+        cookies.set("TOKEN", result.data.token, {
+          path:"/",
+        })
+        console.log(result.data.token)
+
       })
       .catch((error) => {
         error = new Error();
@@ -91,7 +105,7 @@ return(
   <input type="submit" value="submit" onClick={(e) => handleSubmit(e)}/>
 
   {login ? (
-          <p>Welcome back!</p>
+          navigate('/profile/register')
         ) : (
           <p>You Are Not Logged in</p>
         )}
@@ -99,7 +113,6 @@ return(
   )
 
 }
-
 
 export default Login;
 

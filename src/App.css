@@ -2,15 +2,37 @@
   text-align: center;
 }
 
+.logo {
+  position: relative;
+  top: -15px;
+  right: 15px;
+  width: 81px;
+  height: 67px;
+  border-radius: 10%;
+  margin: 10px 0 0 10px;
+  float: left;
+  box-shadow: none;
+}
+
+.slogan {
+  position: relative;
+  top: -11px;
+  right: 30px;
+  width: 171px;
+  height: 69px;
+  border-radius: 10%;
+  margin: 10px 0 0 10px;
+  float: left;
+  box-shadow: none;
+}
+
 .nav{
-  background-color: black; 
+  background-color: black;
   height: 50px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  margin: 10px 5px 20px 5px;  
-  /* margin-left: 0 1120px; */
-  
+  margin: 10px 5px 100px 5px;
 }
 
 .link{
@@ -20,6 +42,7 @@
   margin-top: 10px;
   padding-left: 80px;
   padding-right: 80px;
+
 }
 
 .link:hover{
