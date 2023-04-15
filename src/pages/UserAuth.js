@@ -4,6 +4,7 @@ import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router";
 
 
+
 // import { useEffect } from 'react';
 
 // const Login = (props) => {
@@ -56,6 +57,7 @@ const Login = () => {
 const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const navigate = useNavigate()
   const URI = `${process.env.REACT_APP_API_URI}`
   const cookies = new Cookies()
   const navigate = useNavigate()
@@ -74,11 +76,17 @@ const [email, setEmail] = useState("");
     
     axios(configuration)
       .then((result) => {
+
+        setLogin(true)
+        navigate('/profile/register')
+        
+
         setLogin(true);
         cookies.set("TOKEN", result.data.token, {
           path:"/",
         })
         console.log(result.data.token)
+
       })
       .catch((error) => {
         error = new Error();
