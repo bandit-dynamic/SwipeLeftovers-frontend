@@ -1,10 +1,20 @@
+:root {
+ /* background-color: #262b40; */
+ background-color: #191b26;
+}
+
 *{
   text-align: center;
+  margin: 0; 
+}
+
+.App{
+  background-color: #191b26;
 }
 
 .logo {
   position: relative;
-  top: -15px;
+  top: -10px;
   right: 15px;
   width: 81px;
   height: 67px;
@@ -14,9 +24,22 @@
   box-shadow: none;
 }
 
+.logo1{
+  position: relative;
+  bottom: 45px
+}
+
+.logo2{
+  position: relative;
+  bottom: 50px;
+  left: 20px;
+  width: 128px;
+  height: 128px;
+}
+
 .slogan {
   position: relative;
-  top: -11px;
+  top: -8px;
   right: 30px;
   width: 171px;
   height: 69px;
@@ -27,127 +50,458 @@
 }
 
 .nav{
-  background-color: black;
-  height: 50px;
-  border-radius: 10px;
+  /* background-color: #202331; */
+  background-color: #222432;
+  height: 70px;
+  /* border-radius: 10px; */
   display: flex;
   justify-content: space-between;
-  margin: 10px 5px 100px 5px;
+  /* margin: 10px 5px 100px 5px; */
 }
 
 .link{
   text-decoration: none;
-  font-size: 25px;
-  color: aliceblue;
-  margin-top: 10px;
-  padding-left: 80px;
-  padding-right: 80px;
-
+  color: #191b26; 
 }
 
-.link:hover{
+/* .link:hover{
   color: rgb(199, 212, 212);
   font-size: 35px;
+} */
+
+.menu{
+  width: 97px;
+  color: white;
+  height: 35px;
+  position: relative;
+  top: 18px;
+  right: 22px;
 }
 
-input{
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  height: 25px;
-  width: 330px;
+.menuLink{
+  font-size: 15px;
 }
 
-section{
-  display: inline-block;
-  margin: 100px auto;
-  background-color: rgb(248, 246, 244);
-  padding: 80PX;
-  border-radius: 1rem;
-  box-shadow: 1px 2px 8px 6px #bfbdbd
+.logout{
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  height: 35px;
+  width: 97px;
+  position: relative;
+  top: 18px;
+  right: 22px;
+  text-decoration: none;
 }
 
-container{
- /* background-color: aquamarine;
-  display: grid;
+.log0utLink{
+   font-size: 15px;
+  position: relative;
+  top: 5px;
+  color: white;
+}
+
+/* .....................................ProfileList.js............................ */
+.indexContainer{
+  /* display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px; 
   column-gap: 10px;
-  padding: 10px;   */
-  margin-top: 42px ;
+  padding: 10px;  
+  margin-top: 92px ; */
+  margin: 95px 85px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
   height: 500px;
- 
 }
 
 .people{
   position: relative;
   text-align: center;
   color: white;
+  padding: 15px;
   
 }
 
-img{
-  height: 350px;
+.peopleImg{
+  height: 330px;
   border-radius: 2rem;
-  width: 350px;
+  width: 330px;
   box-shadow: 1px 2px 8px 2px #bfbdbd
 }
+
+/* .peopleImg:hover{
+  transform: scale(1.05);
+} */
+
+.name {
+  font-size: 1.93rem;
+}
+
+/* .name:hover{
+  font-size: 2.3rem;
+} */
 
 .linkH1{ 
   color: rgb(247, 245, 245);
   text-decoration: none;
   position: relative;
-  bottom: 90px;
-  right: 70px;
+  bottom: 60px;
+  right: 25px;
 }
 
 .linkH1:hover{
   color: rgb(0, 0, 0);
-  font-size: 17px;
+  font-size: 19px;
+}
+
+/* ......................................Show.js................................ */
+.showIndex{
+  width: 21em;
+  height: 1.8em;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+}
+
+.personImg{
+  margin-top: 20px;
+  height: 580px;
+  border-radius: .6rem;
+  width: 570px;
+  /* box-shadow: 1px 2px 8px 2px #bfbdbd */
 }
 
 .showForm{
-  display: inline-block;
-  margin: 5px auto;
+  /* display: inline-block;
+  margin: 5px auto; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 42%;
+  height: 100vh;
+  /* z-index: 50; */
+  /* background-color: white; */
 }
-
-.submitBtn{
-  position: relative;
-  bottom: 20px;
-  right: 50px;
-  margin: 50px auto;
-  text-align: center;
-  width: 63px;
-  height: 23px;
+.detail{
+  min-height: 100vh;
+  width: 59%;
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 50;
+  /* object-fit: cover; */
+  background-color:#222430;
 }
-
 .delBtn{
-  position: relative;
-  bottom: 92px;
-  left: 50px;
+  /* position: relative; */
+  /* bottom: 92px; */
+  /* left: 10px; */
+  margin-left: 8px;
+  /* height: 29.5px; */
+  margin: 10px auto;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 14px;
+  width:75px;
+  color: white;
+  height: 34px;
 }
 
-.signUp{
-  width: 65px;
-  margin-left: 140px;
+.editBtn{
+ background-color: #191b26;
+ border: none;
+ color: rgb(244, 243, 243);
+}
+
+.btn{
   margin-top: 20px;
 }
 
-/* .detail{
-  background-color: antiquewhite;
-} */
+.contactBtn{
+  width: 70px;
+  /* position: relative;
+  right: 50px; */
+  margin: 10px auto;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 14px;
+  width: 93px;
+  color: white;
+  height: 34px;
+}
 
-.person{
-  background-color: rgb(254, 255, 255);
-  width: 500px;
-  /* text-align: center; */
-  margin: 40px auto;
-  padding-top: 40px;
-  box-shadow: 1px 2px 8px 1px #bfbdbd;
-  border-radius: 1rem;
+.backBtn{
+  background-color: #222430;
+  border: none;
+  color: rgb(244, 243, 243);
+  position: relative;
+  /* right: 00px; */
+  width: 50px;
+  font-size: large;
+  height: 50px;
+}
+
+.personName{
+  color: white;
+  margin-top: 15px;
+}
+
+.personAge{
+  color: white;
+  margin-top: 15px;
+}
+
+.personP{
+  color: white;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.email{
+  color: white;
+  margin-top: 15px;
+}
+
+.showInfo{
+  margin: 15px;
+}
+
+.submitBtn{
+  margin: 10px auto;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 14px;
+  width: 75px;
+  color: white;
+  height: 34px;
+}
+/* ......................................Form.js............................... */
+.registerForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 20em;
+}
+
+.formContainer{
+  margin-bottom: 35px;
+}
+
+.registerInput{
+  width: 21em;
+  height: 1.8em;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+}
+
+.signupImg{
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%; 
+  /* object-fit: cover; */  
+}
+
+.leftContainer {
+  min-height: 100vh;
+  width: 56%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  object-fit: cover;
   
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 20px;
+
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44%;
+  height: 100vh;
+  z-index: 50;
+
+}
+
+.spanP{
+  color: white;
+}
+
+.registerP{
+  position: relative;
+  top: 10px;
+}
+
+.registerH3{
+  font-size: 26px;
+}
+
+section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.signUp{
+  position: relative;
+  margin: 0.5em;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 15px;
+  width: 97px;
+  color: white;
+  height: 35px;
+}
+
+.loginLink{
+  text-decoration: none;
+  color: #DF4259
+}
+
+.loginLink:hover{
+  /* font-size: 20px; */
+  color: white;
+}
+
+
+
+/* .....................................UserAuth.js............................. */
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 20em;
+  margin-bottom: 80px;
+}
+
+.loginInputs{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.loginInput{
+  width: 18em;
+  height: 1.8em;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  border-radius: 0.3rem;
+
+} 
+
+.loginImg{
+  max-width: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  min-height: 100%;  
+}
+
+.loginButton{
+  /* margin-top: 3em;
+  white-space: nowrap; */
+  position: relative;
+  bottom: 42px;
+  right: 37px;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 15px;
+  width: 97px;
+  color: white;
+  height: 35px;
+}
+
+.loginHeader{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  text-align: center;
+}
+
+.loginLeft{
+  min-height: 100vh;
+  width: 56%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  z-index: 50;
+}
+
+.loginRight{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44%;
+  height: 100vh;
+  z-index: 50;
+}
+
+.welcome{
+  color: white;
+  font-size: 28px;
+  margin-bottom: 1.9rem;
+}
+
+.warnP{
+  color: white;
+  font-size: 13px;
+  position: relative;
+  bottom: 15px;
+  right: 34px;
+}
+
+.registerLink{
+  text-decoration: none;
+  color: #DF4259
+}
+
+.registerLink:hover{
+  /* font-size: 18px; */
+  color: white;
+}
+
+@media screen and (max-width: 980px) {
+  section {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 10em;
+    /* margin-right: 100px; */
+  }
+ .leftContainer {
+    display: none;
+  }
+  .loginLeft{
+    display: none;
+  }
+
 }
