@@ -59,12 +59,12 @@ const Main = (props) => {
         return (
             <main>
                 <Routes>
-                    <Route path="/" element={<Index profile={profile} createProfile={createProfile}/>}/>
+                    <Route path="/profile/register" element={<Index profile={profile} createProfile={createProfile}/>}/>
                     <Route path="/profile/:id" element={<Show 
                             profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>    
-                    <Route path="/profile/register" element={<ProfileList profile={profile}
+                    <Route path="/" element={<ProfileList profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
                     <Route path="/profile/login" element={<Login />}/>        

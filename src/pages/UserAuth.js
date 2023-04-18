@@ -2,8 +2,8 @@ import { useState } from "react";
 import axios  from "axios";
 import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router";
-
-
+import { Link } from "react-router-dom"
+import Header from "../components/Header";
 
 // import { useEffect } from 'react';
 
@@ -60,7 +60,7 @@ const [email, setEmail] = useState("");
   const navigate = useNavigate()
   const URI = `${process.env.REACT_APP_API_URI}`
   const cookies = new Cookies()
-  const navigate = useNavigate()
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -78,7 +78,7 @@ const [email, setEmail] = useState("");
       .then((result) => {
 
         setLogin(true)
-        navigate('/profile/register')
+        navigate('/')
         
 
         setLogin(true);
@@ -94,22 +94,45 @@ const [email, setEmail] = useState("");
   
 }
 return(
-  <form onSubmit={(e)=>handleSubmit(e)}>
-  {/* email */}
-  <input required value={email} type="email" onChange={(e) => setEmail(e.target.value)}/>
-
-  {/* password */}
-  <input required value={password} type="password" onChange={(e) => setPassword(e.target.value)}/>
-
-  {/* submit button */}
-  <input type="submit" value="submit" onClick={(e) => handleSubmit(e)}/>
-
+  <>
+  <Header />
+  <section>
+     <div className="loginLeft">
+        <img className="loginImg" src="https://assets3.thrillist.com/v1/image/1901417/1584x1056/crop;jpeg_quality=60;progressive.jpg" alt="" />
+      </div>
+      <div className="loginRight">
+        <div className="loginHeader">
+        <img class='logo2' src="https://i.imgur.com/Qaotw9A.png" alt="logo" />
+          <p className="welcome">Welcome back</p>
+        </div>
+        {/* <div className="loginForm"> */}
+  <form className="loginForm" onSubmit={(e)=>handleSubmit(e)}>
+    <div className="loginInputs">
+  <input className="loginInput" 
+  required value={email} type="email" 
+  onChange={(e) => setEmail(e.target.value)}
+  placeholder="Email"/>
+  <input className="loginInput" 
+  required value={password} type="password" 
+  onChange={(e) => setPassword(e.target.value)}
+  placeholder="Password"/>
+  </div>
+  <div className="loginInput">
+  {/* <input className="loginInput" type="submit" value="submit" onClick={(e) => handleSubmit(e)}/> */}
+  <button className="loginButton" type="submit" onClick={(e) => handleSubmit(e)}>LOGIN</button>
   {login ? (
-          navigate('/profile/register')
+          navigate('/')
         ) : (
-          <p>You Are Not Logged in</p>
+          <p className="warnP">You Are Not Logged in</p>
         )}
-</form>
+        </div>
+
+         <p className="loginP"><span className="spanP">Don’t you have an account?</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
+  
+  </form>
+  </div>
+  </section>
+  </>
   )
 
 }

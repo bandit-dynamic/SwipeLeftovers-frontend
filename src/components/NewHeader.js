@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import MenuBar from "./Menu";
 
-const Header = (props) => {
+const NewHeader = (props) => {
   return (
       <nav className='nav'>
        <Link to="/">
@@ -10,9 +9,11 @@ const Header = (props) => {
             <img class='slogan' src="https://i.imgur.com/UjF2NHp.png" alt="slogan" />
         </div> 
        </Link> 
-         <MenuBar />
+       <Link className="logout" to="/profile/login">
+              <div className="log0utLink">LOGOUT</div>
+          </Link>
       </nav>
   );
 }
 
-export default Header;
+export default NewHeader;
