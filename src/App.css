@@ -541,3 +541,32 @@ section{
   }
 
 }
+.sectionAbout {
+  max-width: 600px;
+  margin: 3 auto;
+  padding: 10rem;
+}
+
+.sectionAbout .about-heading {
+  color: lightblue;
+  font-size: 4rem;
+}
+
+.sectionAbout .about-content {
+  color: white;
+  font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .sectionAbout {
+    padding: 5rem;
+  }
+  
+  .sectionAbout .about-heading {
+    font-size: 3rem;
+  }
+
+  .sectionAbout .about-content {
+    font-size: 1.5rem;
+  }
+}
