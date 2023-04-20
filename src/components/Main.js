@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react"
 import { Route, Routes } from "react-router-dom"
-import Index from "../pages/Form"
+import Form from "../pages/Form"
 import Show from "../pages/Show"
 import ProfileList from "../pages/ProfileList"
 import Login from "../pages/UserAuth"
+
 import About from "../pages/About"
+
+import Landing from "../pages/Landing"
+
 import { Cookies } from "react-cookie"
 
 const cookies = new Cookies()
 
 
 const Main = (props) => {
-    const token = cookies.get("TOKEN")
-    console.log(token)
+    // const token = cookies.get("TOKEN")
+    // const name = cookies.get("NAME")
+    // console.log(token)
+    // console.log(name)
     const [ profile, setProfile ] = useState(null)
-
     const URI = `${process.env.REACT_APP_API_URI}`
     
+
     const getProfile = async () => {
         const response = await fetch(URI)
         const data = await response.json()
@@ -30,8 +36,7 @@ const Main = (props) => {
             headers: {
                 "Content-Type": "application/json",
             },
-
-            body: JSON.stringify(person)
+            body: JSON.stringify(person),          
         })
         getProfile()
     }
@@ -61,16 +66,24 @@ const Main = (props) => {
         return (
             <main>
                 <Routes>
-                    <Route path="/profile/register" element={<Index profile={profile} createProfile={createProfile}/>}/>
+                    <Route path="/profile/register" element={<Form avatarImage={true}
+                    center
+                    initialState="https://i.ibb.co/2dtXpf2/blank-avatar.webp" profile={profile} createProfile={createProfile}/>}/>
                     <Route path="/profile/:id" element={<Show 
                             profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>    
-                    <Route path="/" element={<ProfileList profile={profile}
+                    <Route path="/profile/all" element={<ProfileList profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
+
                     <Route path="/profile/login" element={<Login />}/>   
                     <Route path="/about" element={<About />} />
+
+                    <Route path="/profile/login" element={<Login />}/>  
+                    {/* <Route path="/" element={<Landing />}/>    */}
+                    <Route path="/" element={<Landing />}/> 
+
                 </Routes>
             </main>
         )
