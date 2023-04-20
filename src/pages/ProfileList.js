@@ -6,11 +6,12 @@ const ProfileList = (props)=>{
     
     return(
         <main className="indexMain">
-         <NewHeader />
+         <NewHeader />  
         <div className="indexContainer">
        { props.profile.map((person) =>{ 
         return( 
         <div key={person._id} className="people">
+        
           <img className="peopleImg" src={person.image[0]} alt={person.name}/>
           <div key={person._id}> 
           <Link className="linkH1" to={`/profile/${person._id}`}><h1 className="name">{person.name},<span>&nbsp;&nbsp;</span>{person.age}</h1></Link>
