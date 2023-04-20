@@ -28,13 +28,13 @@ const Show = (props) => {
     const handleSubmit = (event) =>{
         event.preventDefault()
         props.updateProfile(editForm, person._id)
-        navigate('/')
+        navigate('/profile/all')
     }
 
     const removePerson = (event) =>{
         event.preventDefault()
         props.deleteProfile(person._id)
-        navigate('/')
+        navigate('/profile/all')
     }
 
     const handleToggle = () =>{

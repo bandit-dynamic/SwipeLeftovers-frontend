@@ -78,12 +78,15 @@ const [email, setEmail] = useState("");
       .then((result) => {
 
         setLogin(true)
-        navigate('/')
+        navigate('/profile/all')
         
 
         setLogin(true);
         cookies.set("TOKEN", result.data.token, {
-          path:"/",
+          path:"/profile/all",
+        })
+        cookies.set('NAME', result.data.name, {
+          path: "/profile/all"
         })
         console.log(result.data.token)
 
@@ -121,13 +124,13 @@ return(
   {/* <input className="loginInput" type="submit" value="submit" onClick={(e) => handleSubmit(e)}/> */}
   <button className="loginButton" type="submit" onClick={(e) => handleSubmit(e)}>LOGIN</button>
   {login ? (
-          navigate('/')
+          navigate('/profile/all')
         ) : (
           <p className="warnP">You Are Not Logged in</p>
         )}
         </div>
 
-         <p className="loginP"><span className="spanP">Don’t you have an account?</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
+         <p className="loginP"><span className="spanP">Don’t you create your profile?</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
   
   </form>
   </div>
