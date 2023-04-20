@@ -4,7 +4,9 @@ import Index from "../pages/Form"
 import Show from "../pages/Show"
 import ProfileList from "../pages/ProfileList"
 import Login from "../pages/UserAuth"
+import About from "../pages/About"
 import { Cookies } from "react-cookie"
+
 const cookies = new Cookies()
 
 
@@ -67,7 +69,8 @@ const Main = (props) => {
                     <Route path="/" element={<ProfileList profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
-                    <Route path="/profile/login" element={<Login />}/>        
+                    <Route path="/profile/login" element={<Login />}/>   
+                    <Route path="/about" element={<About />} />
                 </Routes>
             </main>
         )
