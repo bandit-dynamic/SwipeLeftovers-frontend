@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios  from "axios";
 import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom"
 import Header from "../components/Header";
+// import { AuthContext } from "../shared/context/auth-context";
 
 // import { useEffect } from 'react';
 
@@ -54,15 +55,17 @@ import Header from "../components/Header";
 
 
 const Login = () => {
-const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [error, setError] = useState("")
   const navigate = useNavigate()
   const URI = `${process.env.REACT_APP_API_URI}`
   const cookies = new Cookies()
- 
+  // const auth = useContext(AuthContext);
 
   const handleSubmit = (e) => {
+    
     e.preventDefault();
 
     const configuration = {
@@ -76,23 +79,22 @@ const [email, setEmail] = useState("");
     
     axios(configuration)
       .then((result) => {
-
-        setLogin(true)
+        
+        
         navigate('/profile/all')
         
-
         setLogin(true);
         cookies.set("TOKEN", result.data.token, {
           path:"/profile/all",
         })
-        cookies.set('NAME', result.data.name, {
-          path: "/profile/all"
-        })
-        console.log(result.data.token)
+        // cookies.set('NAME', result.data.name, {
+        //   path: "/profile/all"
+        // })
 
       })
       .catch((error) => {
-        error = new Error();
+        const fail = (error.response.data.message)
+        setError(fail)
       });
   
 }
@@ -126,11 +128,13 @@ return(
   {login ? (
           navigate('/profile/all')
         ) : (
-          <p className="warnP">You Are Not Logged in</p>
+          
+          <p className="warnP"></p>
         )}
+  {error ? <label className="loginErr">{error}</label>: null}
         </div>
 
-         <p className="loginP"><span className="spanP">Don’t you create your profile?</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
+         <p className="loginP"><span className="spanP">Don’t have an account? Create your profile</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
   
   </form>
   </div>

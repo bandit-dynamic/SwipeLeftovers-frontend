@@ -7,14 +7,11 @@ import Login from "../pages/UserAuth"
 import About from "../pages/About"
 import Landing from "../pages/Landing"
 import { Cookies } from "react-cookie"
-
 const cookies = new Cookies()
 
 const Main = (props) => {
-    // const token = cookies.get("TOKEN")
-    // const name = cookies.get("NAME")
-    // console.log(token)
-    // console.log(name)
+    const token = cookies.get("TOKEN")
+    console.log(token)
     const [ profile, setProfile ] = useState(null)
     const URI = `${process.env.REACT_APP_API_URI}`
     
@@ -58,12 +55,53 @@ const Main = (props) => {
         getProfile()
       }, []);
 
+
+
+    //   let routes; //setting up routes variable
+
+
+    //   if(isLoggedIn) {
+    //     //authenticated routes here
+    //     routes = (
+    //       <Routes>
+    //         <Route path="/profile/:id" element={<Show 
+    //          profile={profile}
+    //          updateProfile={updateProfile}
+    //          deleteProfile={deleteProfile}/>}/>    
+    //       <Route path="/profile/all" element={<ProfileList profile={profile}
+    //         updateProfile={updateProfile}
+    //         deleteProfile={deleteProfile}/>}/>
+    //       </Routes>
+    //     )
+    //   } else {
+    //     //unauthenticated routes
+    //     routes = (
+    //       <Routes>
+    //         <Route path="/profile/register" element={<Form avatarImage={true}
+    //                 center
+    //                 initialState="https://i.ibb.co/2dtXpf2/blank-avatar.webp" profile={profile} createProfile={createProfile}/>}/>
+    //         <Route path="/profile/login" element={<Login />}/>
+    //         <Route path="/about" element={<About />} />
+    //         <Route path="/" element={<Landing />}/> 
+
+    //       </Routes>
+    //     )
+    //   }
+
         return (
             <main>
+              {/* <AuthContext.Provider 
+                value={{
+                  isLoggedIn: !!tokenState,
+                  token: tokenState,
+                  login: login,
+                  logout: logout,
+                  userId: userId,
+                }}
+              >
+                  {routes} */}   
                 <Routes>
-                    <Route path="/profile/register" element={<Form avatarImage={true}
-                    center
-                    initialState="https://i.ibb.co/2dtXpf2/blank-avatar.webp" profile={profile} createProfile={createProfile}/>}/>
+                    <Route path="/profile/register" element={profile={profile} createProfile={createProfile}/>}/>
                     <Route path="/profile/:id" element={<Show 
                             profile={profile}
                             updateProfile={updateProfile}
@@ -72,12 +110,16 @@ const Main = (props) => {
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
                     <Route path="/profile/login" element={<Login />}/>   
+                    {/* <Route path="/profile/login" element={<Login
+                    isLoggedIn={ isLoggedIn }
+                    handleSubmit={() => setIsLoggedIn(true)}
+                     />}/>    */}
                     <Route path="/about" element={<About />} />
                     <Route path="/profile/login" element={<Login />}/>  
                     {/* <Route path="/" element={<Landing />}/>    */}
                     <Route path="/" element={<Landing />}/> 
-
-                </Routes>
+                  </Routes>
+              {/* </AuthContext.Provider> */}
             </main>
         )
 }
