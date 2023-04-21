@@ -9,16 +9,12 @@ import Landing from "../pages/Landing"
 import { Cookies } from "react-cookie"
 const cookies = new Cookies()
 
-
 const Main = (props) => {
     const token = cookies.get("TOKEN")
     console.log(token)
-
-
     const [ profile, setProfile ] = useState(null)
     const URI = `${process.env.REACT_APP_API_URI}`
     
-
     const getProfile = async () => {
         const response = await fetch(URI)
         const data = await response.json()
@@ -103,14 +99,9 @@ const Main = (props) => {
                   userId: userId,
                 }}
               >
-                  {routes} */}
-            
+                  {routes} */}   
                 <Routes>
-                    <Route path="/profile/register" element={<Form avatarImage={true}
-                    center
-                    initialState="https://i.ibb.co/2dtXpf2/blank-avatar.webp" profile={profile} createProfile={createProfile}/>}/>
-
-
+                    <Route path="/profile/register" element={profile={profile} createProfile={createProfile}/>}/>
                     <Route path="/profile/:id" element={<Show 
                             profile={profile}
                             updateProfile={updateProfile}
@@ -118,17 +109,15 @@ const Main = (props) => {
                     <Route path="/profile/all" element={<ProfileList profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
-
+                    <Route path="/profile/login" element={<Login />}/>   
                     {/* <Route path="/profile/login" element={<Login
                     isLoggedIn={ isLoggedIn }
                     handleSubmit={() => setIsLoggedIn(true)}
                      />}/>    */}
                     <Route path="/about" element={<About />} />
-
                     <Route path="/profile/login" element={<Login />}/>  
                     {/* <Route path="/" element={<Landing />}/>    */}
                     <Route path="/" element={<Landing />}/> 
-
                   </Routes>
               {/* </AuthContext.Provider> */}
             </main>
