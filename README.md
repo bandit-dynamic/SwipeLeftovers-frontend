@@ -1,71 +1,48 @@
-# Getting Started with Create React App
+# SwipeLeftovers-backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This idea was the collaborative result of four incredibly creative individuals who recognize that in this world today, there is a grave derth of love for all the lonely folk out there who struggle daily to find their soul mate, because all their swipes and likes have already found someone better. 
 
-## Available Scripts
+We here at Swipe Leftovers offer our condolences, and a solution- nay- a do-over at love. Give us a chance, and we'll help pair you up with someone equally as lonely and unfortunate as you. 
 
-In the project directory, you can run:
+It's okay if you always come in seconds.. we know you're always second. But join us and become first seconds at Swipe Leftovers where you might find someone a little less out of your league 
 
-### `npm start`
+(love not guaranteed; results may vary)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Technologies used:
+ MERN stack
+- Mongoose Express
+- React
+- Node.js
+- Bootstrap 
+- Axios 
+- Bcrypt 
+- JSON Web Token (JWT)
+- Heroku
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Project Description:
+This site provides users with ability to find attractive mates. Users can view profiles, as well as edit and remove their own profiles once they've found the love they're looking for, with complete anonymity and user authentication in a React app environment. 
 
-### `npm test`
+<img width="1017" alt="landing page" src="https://files.slack.com/files-pri/T0351JZQ0-F05411EF0EB/img_1433.jpg">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Wire Frames:
+<img width="1017" alt="wireframe slide 1" src="https://media.git.generalassemb.ly/user/46658/files/5077f977-b66a-44e2-b050-6b1e912d83c4">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img width="1017" alt="wireframe slide 2" src="https://media.git.generalassemb.ly/user/46658/files/0169c222-6f33-41e6-aa62-3083a5abd79f">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<img width="1017" alt="wireframe slide 3" src="https://media.git.generalassemb.ly/user/46658/files/55ebb8a8-9415-4569-9fcc-073ddc8dd679">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1017" alt="wireframe slide 3" src="https://media.git.generalassemb.ly/user/46658/files/ea0a056e-1917-495a-b29e-270443f5f39a">
 
-### `npm run eject`
+<img width="1017" alt="wireframe slide 3" src="https://media.git.generalassemb.ly/user/46658/files/3d0e0572-fefd-41c4-9031-079d37afd537">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img width="1017" alt="wireframe slide 3" src="https://media.git.generalassemb.ly/user/46658/files/1017302a-0094-46ac-81cb-fbd30a584c2c">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# MVP Goals
+Create a fully functional CRUD MERN app that has user authentication that is deployed online with a Read.me file. Once a user is registered they can create a profile that includes information about them as well as their e-mail so that if they are interested they can connect that way.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-whatever
+# Stretch Goals
+-Make it so that users can review their dates.
+-Adding Google maps API to be able to see the distance between other users.
+-Make the app mobile friendly.
+-Create a chat feature within the app.
