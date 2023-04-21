@@ -129,7 +129,7 @@ const handleSubmit = (event) =>{
     <Header />
         <section>
           <div className="rightContainer">
-          <img className='logo1' src="https://i.imgur.com/Qaotw9A.png" alt="logo" />
+          {/* <img className='logo1' src="https://i.imgur.com/Qaotw9A.png" alt="logo" /> */}
         <div className="header">
           <p className="registerH3">Create your profile</p>
           </div>

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
+import Footer from "../components/Footer"
 
 
 const Landing = ()=>{
@@ -14,11 +15,12 @@ const Landing = ()=>{
            <img className="landImg" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzkzZmEzOWQ2ZDY2NjViMjBkYTk1MWQ2OWEzMmRjNDhhZGE0Nzg2OCZjdD1n/3o7TKLqFDsjgWlT2O4/giphy.gif"/>
         </div>
         <div className="landRight">
-           <h1 className="land">About</h1>
-           <button><Link to="/profile/login">Log in</Link></button>
+           <h1 className="land">Welcome to Swipe Leftovers</h1>
+           <button><Link to="/about">about</Link></button>
            <button><Link to="/profile/register">Sign up</Link></button>
         </div> 
          </section>
+         <Footer />
         </>
     )
 }

@@ -95,7 +95,7 @@
 }
 
 .log0utLink{
-   font-size: 15px;
+  font-size: 15px;
   position: relative;
   top: 5px;
   color: white;
@@ -103,7 +103,8 @@
 
 /*..........................................Landing.js.............................*/
 .land{
-  color: #DF4259;
+  color: lightblue;
+  font-family: 'Titan One, cursive'
 }
 
 /* .landingSection{
@@ -122,7 +123,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 60%;
   height: 100vh;
   z-index: 50;
 }
@@ -132,9 +133,54 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 53%;
+  width: 40%;
   height: 100vh;
   z-index: 50;
+}
+
+.gitHub{
+  width: 33.5px;
+  height: 33.5px;
+  border-radius: 2rem;
+  margin: 6px;
+}
+
+.footer{
+  background-color: #222430;
+  padding: 15px 29px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logoSlogan2{
+  display: flex;
+  flex-direction: row;
+}
+
+.logoSlogan2 >p{
+  margin-bottom: 0;
+  color: white;
+  align-self: center;
+}
+
+.logo3{
+  width: 45px;
+  height: 45px;
+}
+
+.ghImg{
+  display: flex;
+  flex-direction: row;
+}
+
+.ghImg >p{
+  color: white;
+  align-self: center;
+  position: relative;
+  right: 12px;
+  margin-bottom: 0;
+  font-size: 17px;
 }
 
 /* .....................................ProfileList.js............................ */
@@ -355,8 +401,7 @@
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  object-fit: cover;
-  
+  object-fit: cover;  
 }
 
 .header {
@@ -367,7 +412,6 @@
   align-items: center;
   color: white;
   margin-bottom: 20px;
-
 }
 
 .rightContainer {
@@ -378,7 +422,6 @@
   width: 44%;
   height: 100vh;
   z-index: 50;
-
 }
 
 .spanP{
@@ -525,6 +568,7 @@ section{
   color: white;
 }
 
+
 @media screen and (max-width: 980px) {
   section {
     display: flex;
@@ -539,22 +583,9 @@ section{
   .loginLeft{
     display: none;
   }
-
-}
-.sectionAbout {
-  max-width: 600px;
-  margin: 3 auto;
-  padding: 10rem;
-}
-
-.sectionAbout .about-heading {
-  color: lightblue;
-  font-size: 4rem;
-}
-
-.sectionAbout .about-content {
-  color: white;
-  font-size: 1rem;
+  /* .footer{
+    display: none;
+  } */
 }
 
 @media only screen and (max-width: 768px) {
@@ -562,6 +593,10 @@ section{
     padding: 5rem;
   }
   
+    .footer{
+    display: none;
+  } 
+
   .sectionAbout .about-heading {
     font-size: 3rem;
   }

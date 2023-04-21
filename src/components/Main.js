@@ -4,15 +4,11 @@ import Form from "../pages/Form"
 import Show from "../pages/Show"
 import ProfileList from "../pages/ProfileList"
 import Login from "../pages/UserAuth"
-
 import About from "../pages/About"
-
 import Landing from "../pages/Landing"
-
 import { Cookies } from "react-cookie"
 
 const cookies = new Cookies()
-
 
 const Main = (props) => {
     // const token = cookies.get("TOKEN")
@@ -22,7 +18,6 @@ const Main = (props) => {
     const [ profile, setProfile ] = useState(null)
     const URI = `${process.env.REACT_APP_API_URI}`
     
-
     const getProfile = async () => {
         const response = await fetch(URI)
         const data = await response.json()
@@ -76,10 +71,8 @@ const Main = (props) => {
                     <Route path="/profile/all" element={<ProfileList profile={profile}
                             updateProfile={updateProfile}
                             deleteProfile={deleteProfile}/>}/>
-
                     <Route path="/profile/login" element={<Login />}/>   
                     <Route path="/about" element={<About />} />
-
                     <Route path="/profile/login" element={<Login />}/>  
                     {/* <Route path="/" element={<Landing />}/>    */}
                     <Route path="/" element={<Landing />}/> 

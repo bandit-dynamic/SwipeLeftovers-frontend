@@ -75,14 +75,14 @@ const handleSubmit = (event) =>{
                   placeholder="name"
                   onChange={handleChange}
                   />
-                {/* <input  
+                <input  
                   className="registerInput"
                   type="text"
                   value={newForm.image}
                   name="image"
                   placeholder="image URL"
                   onChange={handleChange}
-                  /> */}
+                  />
                 <input 
                   className="registerInput"
                   type="text"
