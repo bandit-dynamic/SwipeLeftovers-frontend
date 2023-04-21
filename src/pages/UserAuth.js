@@ -130,7 +130,7 @@ return(
         )}
         </div>
 
-         <p className="loginP"><span className="spanP">Don’t you create your profile?</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
+         <p className="loginP"><span className="spanP">Don’t have an account? Create your profile</span> <Link className="registerLink" to="/profile/register">Sign up</Link></p> 
   
   </form>
   </div>
