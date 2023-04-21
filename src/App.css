@@ -91,7 +91,8 @@
   position: relative;
   top: 18px;
   right: 22px;
-  text-decoration: none;
+  font-size: 15px;
+  color: white;
 }
 
 .log0utLink{
@@ -425,6 +426,13 @@ section{
   color: white;
 }
 
+.regErr {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  bottom: 40px;
+  left: 10px;
+}
 
 
 /* .....................................UserAuth.js............................. */
@@ -499,6 +507,14 @@ section{
   width: 44%;
   height: 100vh;
   z-index: 50;
+}
+
+.loginErr {
+  color: #DF4259;
+  font-size: 20px;
+  position: relative;
+  bottom: 40px;
+  right: 34px;
 }
 
 .welcome{
