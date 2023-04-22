@@ -14,9 +14,6 @@ const NewHeader = (props) => {
             <img class='slogan' src="https://i.imgur.com/UjF2NHp.png" alt="slogan" />
         </div> 
        </Link> 
-       
-       
-
         {/* {auth.isLoggedIn && ( */}
         <Link to="/profile/login">
             <button className="logout" onClick={() => auth.logout()}>LOGOUT</button>
