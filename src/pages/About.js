@@ -2,20 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import "../About.css";
+import "../App.css"
 
 const About = () => {
   return (
     <>
       <Header />
       <section className="sectionAbout">
-
         <div className="about-left">
           <h2 className="about-heading" style={{ fontFamily: "Titan One, cursive" }}>
             Love At First Swipe
           </h2>
-          <h3>
-            Are you tired of swiping right on dating apps only to waste your time? At Swipe Leftovers, we use basic principles, such as a simple message/email, to connect individuals. Our app allows people from different walks of life to connect. Whether you're a busta, a creep, or even a convict, you're free to find love! We encourage our users to fill out detailed profiles that highlight their basic info, emails, and bio. Sign up by clicking the Swipe Leftovers icon on the top left corner and start swiping leftovers!
-          </h3>
+          <p> Are you tired of swiping right on dating apps only to waste your time? At Swipe Leftovers, we use basic principles, such as a simple message/email, to connect individuals. </p>
+          <p>Our app allows people from different walks of life to connect. Whether you're a busta, a creep, or even a convict, you're free to find love!</p><p> We encourage our users to fill out detailed profiles that highlight their basic info, emails, and bio. Sign up by clicking the Swipe Leftovers icon on the top left corner and start swiping leftovers!</p>
         </div>
         <div className="about-right">
           <img

@@ -3,12 +3,14 @@ import { Link } from "react-router-dom"
 const Footer = ()=>{
     return(
         <div className="footer">
-               <div className='logoSlogan2'> 
+            <div className='logoSlogan2'> 
         <img class='logo3' src="https://i.imgur.com/Qaotw9A.png" alt="logo" />
              <p>@2023 SwipeLeftovers. All rights reserved</p>
+            
         </div>     
           
-            <div className="ghImg">  
+            <div className="ghImg">   
+            <Link className="aboutUs" to="/about" ><p>About us</p></Link>
             <p>contact us</p>   
             <Link to="https://github.com/Jojozhou0715"><img className="gitHub" src="https://avatars.githubusercontent.com/u/92937414?v=4"/></Link>
              <Link to="https://github.com/Hellosu3"><img className="gitHub" src="https://avatars.githubusercontent.com/u/119162007?v=4"/></Link>
