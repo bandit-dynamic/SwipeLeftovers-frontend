@@ -22,7 +22,7 @@ Technologies used:
 # Project Description:
 This site provides users with ability to find attractive mates. Users can view profiles, as well as edit and remove their own profiles once they've found the love they're looking for, with complete anonymity and user authentication in a React app environment. 
 
-<img width="1017" alt="landing page" src="https://files.slack.com/files-pri/T0351JZQ0-F05411EF0EB/img_1433">
+<img width="1017" alt="landing page" src="https://files.slack.com/files-pri/T0351JZQ0-F05411EF0EB/img_1433.jpg">
 
 
 # Wire Frames:
