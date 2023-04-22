@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:900');
+
 :root {
  /* background-color: #262b40; */
  background-color: #191b26;
@@ -26,7 +28,7 @@
 
 .logo1{
   position: relative;
-  bottom: 45px
+  bottom: 32px
 }
 
 .logo2{
@@ -103,10 +105,6 @@
 }
 
 /*..........................................Landing.js.............................*/
-.land{
-  color: lightblue;
-  font-family: 'Titan One, cursive'
-}
 
 /* .landingSection{
   background: url("https://assets3.thrillist.com/v1/image/2296546/1584x1054/crop;jpeg_quality=60.jpg");
@@ -132,9 +130,9 @@
 .landRight{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  width: 40%;
+  width: 45%;
   height: 100vh;
   z-index: 50;
   
@@ -166,6 +164,15 @@
   align-self: center;
 }
 
+.aboutUs{
+  text-decoration: none;
+  color: white;
+  align-self: flex-end;
+  position: relative;
+  right: 33px;
+  top: 5.5px;
+}
+
 .logo3{
   width: 45px;
   height: 45px;
@@ -183,6 +190,64 @@
   right: 12px;
   margin-bottom: 0;
   font-size: 17px;
+}
+
+.landP{
+  color: #edeef4;
+  font-size: 3.4rem;
+  text-align: left;
+  margin-top: 130px;
+  font-family: 'family Kanit';
+}
+
+.kanye{
+  font-size: 3.8rem;
+  color: #b0bbed;
+}
+
+.landingP{
+  font-size: 16px;
+  color: white;
+  position: relative;
+  left: 2.5px;
+  top: 26px;
+  margin-bottom: 3px;
+}
+
+.signupDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.ppp{
+  color: white;
+  position: relative;
+  left: 140px;
+  top: 18px;
+}
+
+.landBtn{
+  position: relative;
+  top: 16px;
+  left: 229px;
+  background-color: #DF4259;
+  border: none;
+  border-radius: 3rem;
+  font-size: 15px;
+  width: 97px;
+  /* color: white; */
+  height: 35px;
+}
+
+.landSP{
+  color: white;
+  text-decoration: none;
+}
+
+.landingP2{
+  position: relative;
+  left: 84px;
+  color: white;
 }
 
 /* .....................................ProfileList.js............................ */
@@ -586,7 +651,7 @@ section{
 }
 
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 960px) {
   section {
     display: flex;
     justify-content: center;
@@ -600,10 +665,17 @@ section{
   .loginLeft{
     display: none;
   }
-  
-  /* .footer{
+
+  .about-right{
     display: none;
-  } */
+  }
+
+  .footer{
+    display: none;
+  }
+  .landLeft{
+    display: none;
+  }
 
 }
 /* .....................................About.js............................. */

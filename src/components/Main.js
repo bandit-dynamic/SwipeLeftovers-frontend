@@ -101,7 +101,7 @@ const Main = (props) => {
               >
                   {routes} */}   
                 <Routes>
-                    <Route path="/profile/register" element={profile={profile} createProfile={createProfile}/>}/>
+                    <Route path="/profile/register" element={<Form profile={profile} createProfile={createProfile}/>}/>
                     <Route path="/profile/:id" element={<Show 
                             profile={profile}
                             updateProfile={updateProfile}
