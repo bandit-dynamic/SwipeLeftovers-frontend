@@ -11,7 +11,7 @@ const Login = () => {
   const [login, setLogin] = useState(false);
   const [error, setError] = useState("")
   const navigate = useNavigate()
-  const URI = `${process.env.REACT_APP_API_URI}`
+  const URI = `${process.env.REACT_APP_BASE_URL}`
   const cookies = new Cookies()
   // const auth = useContext(AuthContext);
 

@@ -13,7 +13,7 @@ const Main = (props) => {
     const token = cookies.get("TOKEN")
     console.log(token)
     const [ profile, setProfile ] = useState(null)
-    const URI = `${process.env.REACT_APP_API_URI}`
+    const URI = `${process.env.REACT_APP_BASE_URL}`
     
     const getProfile = async () => {
         const response = await fetch(URI)
