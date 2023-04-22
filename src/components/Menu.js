@@ -23,9 +23,6 @@ const MenuBar = ()=>{
             <MenuItem onClick={popupState.close}><Link className="link" to="/profile/register">
               <div>Signup</div>
           </Link></MenuItem>
-          {/* <MenuItem onClick={popupState.close}><Link className="link" to="/about">
-              <div>About</div>
-            </Link></MenuItem> */}
           </Menu>
         </React.Fragment>
       )}

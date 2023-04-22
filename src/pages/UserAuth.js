@@ -4,55 +4,6 @@ import { Cookies } from "react-cookie";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom"
 import Header from "../components/Header";
-// import { AuthContext } from "../shared/context/auth-context";
-
-// import { useEffect } from 'react';
-
-// const Login = (props) => {
-//   const URI = `${process.env.REACT_APP_API_URI}`
-
-//   const handleLogin = (e) => {
-//     e.preventDefault()
-
-//     const form = e.target;
-//     const profile = {
-//       email: form[0].value,
-//       password: form[1].value
-//     }
-
-//     fetch(`${URI}login`, {
-//       method: "POST",
-//       headers: {
-//         "Content-type": "application/json"
-//       },
-//       body: JSON.stringify(profile)
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//       localStorage.setItem("token", data.token)
-//     })
-//   }
-//   useEffect(() => {
-//     fetch('/userIsAuth', {
-//       headers: {
-//         "token-required": `${localStorage.getItem("token")}`
-//       }
-//     })
-//     .then(res => res.json())
-//     .then(data => data.isLoggedIn ? redirect('profile/register/'): null)
-//   }, [])
-
-//   return (
-//     <form onSubmit={event => handleLogin(event)}>
-//       <input required type="email"/>
-//       <input required type="password"/>
-//       <input type="submit" value="submit"/>
-//     </form>
-//   )
-// }
-
-// export default Login;
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -146,4 +97,51 @@ return(
 
 export default Login;
 
+// import { AuthContext } from "../shared/context/auth-context";
 
+// import { useEffect } from 'react';
+
+// const Login = (props) => {
+//   const URI = `${process.env.REACT_APP_API_URI}`
+
+//   const handleLogin = (e) => {
+//     e.preventDefault()
+
+//     const form = e.target;
+//     const profile = {
+//       email: form[0].value,
+//       password: form[1].value
+//     }
+
+//     fetch(`${URI}login`, {
+//       method: "POST",
+//       headers: {
+//         "Content-type": "application/json"
+//       },
+//       body: JSON.stringify(profile)
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//       localStorage.setItem("token", data.token)
+//     })
+//   }
+//   useEffect(() => {
+//     fetch('/userIsAuth', {
+//       headers: {
+//         "token-required": `${localStorage.getItem("token")}`
+//       }
+//     })
+//     .then(res => res.json())
+//     .then(data => data.isLoggedIn ? redirect('profile/register/'): null)
+//   }, [])
+
+//   return (
+//     <form onSubmit={event => handleLogin(event)}>
+//       <input required type="email"/>
+//       <input required type="password"/>
+//       <input type="submit" value="submit"/>
+//     </form>
+//   )
+// }
+
+// export default Login;

@@ -33,24 +33,6 @@ const handleSubmit = (event) =>{
     })
 }
 
-// const loaded = () =>{
-//     return props.profile.map((person) =>{
-//         return(
-//         <div key={person._id} className="person"> 
-//         <img src={person.image} alt={person.name}/>
-//         <Link to={`/profile/${person._id}`}><h1>{person.name}</h1></Link>
-//         <h3>{person.age}</h3>   
-//         <p>{person.bio}</p>
-//         <h3>{person.email}</h3>     
-//         </div>
-//     )
-//     })
-// }
-
-// const loading = () =>{
-//     return <h1>Loading...</h1>
-// }
-
     return (
     <> 
     <Header />
